@@ -4,9 +4,9 @@
     <meta charset="UTF-8" />
     <title>SmartTodo</title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
-    <script src="controllers.js"></script>
-    <script src="factories.js"></script>
-    <script src="app.js"></script>
+    <script src="client/controllers.js"></script>
+    <script src="client/factories.js"></script>
+    <script src="client/app.js"></script>
 
   </head>
   <body ng-app="app">
@@ -17,7 +17,7 @@
         <input type="submit" ng-model="submitItem" ng-click="addItem(todoItem)">
       </form>
       <div class="todoList">
-        <ul ng-repeat="todo in todos" ng-click="removeItem($index)" >
+        <ul ng-repeat="todo in todos track by $index" ng-click="removeItem($index)" >
           <li >{{todo}}</li>
         </ul>
       </div>
